@@ -33,3 +33,169 @@ Very light gray (background, headings, buttons): hsl(0, 0%, 95%)
 
 - Family: [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders+Display)
 - Weights: 700 */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* Universal + General */
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    /* ### Primary */
+    --Brightorange: hsl(31, 77%, 52%);
+    --Darkcyan: hsl(184, 100%, 22%);
+    --Verydarkcyan: hsl(179, 100%, 13%);
+    
+    /* ### Neutral */
+    
+    --Transparentwhite: hsla(0, 0%, 100%, 0.75);
+    --Verylightgray: hsl(0, 0%, 95%); 
+
+    /* Border Radius */
+    --br: 1rem;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+body, button{
+    background-color: var(--Verylightgray);
+}
+h1{
+    color:var(--Verylightgray);
+    font-family: "Big Shoulders Display";
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin:.5rem 0;
+}
+p{
+    color:var(--Transparentwhite);
+    margin: 1rem 0;
+    line-height: 1.8rem;
+    width: 90%;
+    word-spacing: .1rem;
+}
+
+/* Styling the container holding the cards */
+
+.container{
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    margin: 15vh auto;
+    width: 375px;
+    height: 1400px;
+    font-family: "Lexend Deca";
+    border-radius: var(--br);
+    box-shadow: 1px 30px 100px 1px rgba(0, 0, 0, .6);
+}
+
+/* Styling the individual cards */
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content:stretch;
+    padding: 1rem 50px;
+}
+
+.wrapper:nth-child(1){
+    background-color: var(--Brightorange) ;
+    border-radius: var(--br) var(--br) 0 0 ;
+}
+
+.wrapper:nth-child(2){
+    background-color: var(--Darkcyan) ;
+}
+
+.wrapper:nth-child(3){
+    background-color: var(--Verydarkcyan) ;
+    border-radius: 0 0 var(--br) var(--br) ;
+}
+
+
+/* icons */
+img{
+    width: fit-content;
+    height: fit-content;
+    margin: 1.5rem 0;
+}
+
+/* Button and links */
+
+a{
+    text-decoration: none;
+    width: 50%;
+    padding: 1rem .5rem;
+    border-radius: 3rem;
+    border: none;
+    margin: 1rem 0 auto;
+    background-color: var(--Transparentwhite);
+    text-align: center;
+}
+
+.wrapper:nth-child(1) a{
+    color: var(--Brightorange) ;
+}
+
+.wrapper:nth-child(2) a{
+    color: var(--Darkcyan) ;
+}
+
+.wrapper:nth-child(3) a{
+    color: var(--Verydarkcyan) ;
+}
+
+/* Active states */
+.wrapper:nth-child(1) a:hover{
+    background-color: var(--Brightorange);
+    color: white;
+    cursor: pointer;
+    border: 2px white solid;
+}
+
+.wrapper:nth-child(2) a:hover{
+    background-color: var(--Darkcyan);
+    color: white;
+    cursor: pointer;
+    border: 2px white solid;
+}
+
+.wrapper:nth-child(3) a:hover{
+    background-color: var(--Verydarkcyan);
+    color: white;
+    cursor: pointer;
+    border: 2px white solid;
+}
+
+/* bragging rights */
+.attribution{
+    margin: auto;
+    text-align: center;
+}
+
+@media (min-width:1000px){
+    .container{
+        flex-direction: row;
+        height: 500px;
+        width: 1200px;
+    }
+    .wrapper:nth-child(1){
+        border-radius:  var(--br) 0 0 var(--br) ;
+    }
+
+    .wrapper:nth-child(3){
+        border-radius:0  var(--br) var(--br) 0;
+    }
+    a{
+        margin: auto 0;
+    }
+}
